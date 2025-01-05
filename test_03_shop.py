@@ -29,9 +29,10 @@ input_field.send_keys(453100)
 
 driver.find_element(By.ID, 'continue').click()
 
-total=driver.find_element(By.CSS_SELECTOR,'div[class="summary_total_label"]')
+total=driver.find_element(By.CSS_SELECTOR,'div[class="summary_total_label"]').text
 
-print (total.text)
+print (total)
+assert total == "Total: $58.29"
 
 driver.quit()
 

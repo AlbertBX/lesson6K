@@ -1,9 +1,7 @@
-from time import sleep 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.weit import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
 
 
 driver = webdriver.Chrome()
@@ -15,16 +13,13 @@ input_field.clear()
 
 input_field.send_keys(45)
 
-
 driver.find_element(By.XPATH, '//span[text()="7"]').click()
 driver.find_element(By.XPATH, '//span[text()="+"]').click()
 driver.find_element(By.XPATH, '//span[text()="8"]').click()
 driver.find_element(By.XPATH, '//span[text()="="]').click()
 
-sleep(45)
 result = WebDriverWait (driver, 45). until(EC.element_to_be_clickable ((By.CSS_SELECTOR,'div[class="screen"]'))).text
 print (result)
 assert result=="15"
 
 driver.quit()
-

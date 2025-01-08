@@ -37,3 +37,4 @@ print(total)
 
 assert total == "Total: $58.29"
 driver.quit()
+

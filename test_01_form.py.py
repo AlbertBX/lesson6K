@@ -37,15 +37,15 @@ blue_button = driver.find_element(By.CSS_SELECTOR, 'button[class="btn btn-'
 
 blue_button.click()
 
-assert "danger" in driver.find_element(By.ID,
-                                        "zip-code").get_attribute("class")
+assert "danger" in driver.find_element(By.ID, "zip-code"
+                                      ).get_attribute("class")
 
 fields = ['first-name', 'last-name', 'address', 'e-mail', 'phone', 'city',
           'country', 'job-position', 'company']
 
 for field in fields:
-    assert "success" in driver.find_element(By.ID,
-                                             field).get_attribute("class")
+    assert "success" in driver.find_element(By.ID, field
+                                           ).get_attribute("class")
 
 
 driver.quit()
